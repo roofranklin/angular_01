@@ -1,0 +1,37 @@
+/* FONTES */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&family=Playfair+Display:wght@400;700&display=swap');
+$fonte-principal: 'Playfair Display', serif;
+$fonte-secundaria: 'Open Sans', sans-serif;
+$pequena: 12px;
+$media: 16px;
+$grande: 24px;
+$extra-grande: 32px;
+
+/* CORES */
+$cor-principal: #7A2048;
+$cor-secundaria: #408EC6;
+$branco: #ffffff;
+$cinza-claro: #D3D3D3;
+$cinza-medio: #1E2761;
+$cinza-escuro: #45484A;
+$preto: #000000;
+
+mat-toolbar {
+    background-color: $cor-principal;
+    color: $branco;
+    h1 {
+        font-family: $fonte-principal;
+        font-size: $grande;
+        color: $branco;
+        padding-top: 15px; 
+    }
+    .menu-spacer {
+        flex: 1 1 auto;
+    }
+    button {
+        margin-top: 10px;
+        &:hover {
+            color: $cor-secundaria;
+        }
+    }
+}

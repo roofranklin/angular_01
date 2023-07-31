@@ -9,7 +9,12 @@
         font-family: $fonte-principal;
         font-size: $grande;
         color: $cor-principal;
-    } 
+    }
+    h2 {
+        font-family: $fonte-principal;
+        font-size: $grande;
+        color: $cor-principal;
+    }  
     mat-grid-tile {
         mat-card {
             background-color: $branco;
@@ -23,7 +28,7 @@
                 width: 100%;
             }
             mat-card-content {
-                h2 {
+                h3 {
                     font-family: $fonte-principal;
                     font-size: $grande;
                     color: $cinza-escuro;
@@ -59,5 +64,8 @@
                 }
             }
         }
+    }
+    #lista-imoveis {
+        padding-top: 80px;
     }
 }

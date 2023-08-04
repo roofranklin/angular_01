@@ -14,6 +14,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { DetalhesComponent } from './detalhes/detalhes.component';
+import { RodapeComponent } from './rodape/rodape.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { DetalhesComponent } from './detalhes/detalhes.component';
     QuemSomosComponent,
     ContatoComponent,
     CabecalhoComponent,
-    DetalhesComponent
+    DetalhesComponent,
+    RodapeComponent
   ],
   imports: [
     BrowserModule,

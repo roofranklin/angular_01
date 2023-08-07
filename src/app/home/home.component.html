@@ -1,9 +1,10 @@
 <div class="container">
-    <h1> Olá {{ nome }}!</h1>
+    <h1> Olá {{ nome + " " + sobrenome | uppercase }}!</h1>
+    <h2>{{ data | date : 'dd/MM/YYYY' }}</h2>
     <section id="imoveis-favoritos">
         <h2>Confira aqui os seus imóveis favoritos:</h2>
         <mat-grid-list cols="3" rowHeight="3:4">
-            <div *ngFor="let imovel of imoveis">
+            <div *ngFor="let imovel of imoveis; let i = index">
                 <mat-grid-tile *ngIf="imovel.favorito">
                     <mat-card>
                         <img mat-card-image [src]="imovel.foto" [alt]="imovel.titulo" />
@@ -13,10 +14,17 @@
                                 <li>Quartos: {{ imovel.quartos }}</li>
                                 <li>Banheiros: {{ imovel.banheiros }}</li>
                                 <li>Metragem: {{ imovel.area }} m²</li>
-                                <li>Preço: R$ {{ imovel.preco }},00</li>
+                                <li>Preço: {{ imovel.preco | currency }}</li>
                             </ul>
                         </mat-card-content>
                         <mat-card-actions>
+                            <button
+                                [class]="imovel.favorito === false ? 'favorite' : 'favorite-checked'"
+                                [title]="imovel.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'"
+                                mat-button
+                                (click)="toogleFavorito(i)">
+                            <mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon>
+                        </button> 
                             <button mat-button (click)="verDetalhes(imovel.id)">Mais detalhes</button>
                         </mat-card-actions>
                     </mat-card>
@@ -27,7 +35,7 @@
     <section id="lista-imoveis">
         <h2>Todos os imoveis:</h2>
         <mat-grid-list cols="3" rowHeight="3:4">
-            <mat-grid-tile *ngFor="let imovel of imoveis">
+            <mat-grid-tile *ngFor="let imovel of imoveis; let i = index">
                 <mat-card>
                     <img mat-card-image [src]="imovel.foto" [alt]="imovel.titulo" />
                     <mat-card-content>
@@ -36,10 +44,17 @@
                             <li>Quartos: {{ imovel.quartos }}</li>
                             <li>Banheiros: {{ imovel.banheiros }}</li>
                             <li>Metragem: {{ imovel.area }} m²</li>
-                            <li>Preço: R$ {{ imovel.preco }},00</li>
+                            <li>Preço: {{ imovel.preco | currency }}</li>
                         </ul>
                     </mat-card-content>
                     <mat-card-actions>
+                        <button
+                            [class]="imovel.favorito === false ? 'favorite' : 'favorite-checked'"
+                            [title]="imovel.favorito === false ? 'Adicionar aos favoritos' : 'Remover dos favoritos'"
+                            mat-button
+                            (click)="toogleFavorito(i)">
+                            <mat-icon aria-hidden="false" aria-label="Favoritos" fontIcon="favorite"></mat-icon>
+                        </button> 
                         <button mat-button (click)="verDetalhes(imovel.id)">Mais detalhes</button>
                     </mat-card-actions>
                 </mat-card>

@@ -3,13 +3,15 @@ import { Router } from '@angular/router';
 import { NgFor, NgIf } from '@angular/common'
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [MatGridListModule, MatCardModule, NgFor, NgIf ],
+  imports: [MatGridListModule, MatCardModule, MatIconModule, NgFor, NgIf, CommonModule ],
 })
 export class HomeComponent {
 
@@ -19,12 +21,17 @@ export class HomeComponent {
     this.router.navigate(['/detalhes', imovelId]);
   }
 
+  toogleFavorito(index: number): void {
+    this.imoveis[index].favorito = !this.imoveis[index].favorito
+  }
+
 
   nome: string = 'Pedro';
   sobrenome: string = 'dos Santos';
+  data: any = new Date();
   imoveis: Array<any> = [
     {
-      id: "549hg54980yth8945h",
+      id: 1,
       titulo: 'Casa Magnífica',
       foto: 'https://i.ibb.co/JKzFtzj/casa.jpg',
       quartos: 4,
@@ -34,7 +41,7 @@ export class HomeComponent {
       favorito: true
     },
     {
-      id: "sdfvneorhnj093458",
+      id: 2,
       titulo: 'Apartamento Padrão',
       foto: 'https://i.ibb.co/tmsG61R/apartamento.jpg',
       quartos: 2,

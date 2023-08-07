@@ -49,9 +49,22 @@
             }
             mat-card-actions {
                 padding-bottom: 20px;
+                gap: 10px;
+                .favorite {
+                    width: 20%;
+                    background-color: $branco;
+                    border: 1px solid $cor-principal;
+                    mat-icon {
+                        color: $cor-principal;
+                    }
+                }
+                .favorite-checked {
+                    width: 20%;
+                    background-color: $cor-principal;
+                }
                 button {
                     display: block;
-                    width: 100%;
+                    width: 80%;
                     height: 48px;
                     cursor: pointer;
                     border: none;

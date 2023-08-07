@@ -4,6 +4,7 @@ import ptBr from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -11,7 +12,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 import { QuemSomosComponent } from './quem-somos/quem-somos.component';
-import { ContatoComponent } from './contato/contato.component';
 
 // MATERIAL UI
 import {MatIconModule} from '@angular/material/icon';
@@ -26,13 +26,13 @@ registerLocaleData(ptBr);
   declarations: [
     AppComponent,
     QuemSomosComponent,
-    ContatoComponent,
     CabecalhoComponent,
     DetalhesComponent,
     RodapeComponent
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,

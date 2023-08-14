@@ -2,15 +2,16 @@
 
 .container {
     width: 1140px;
+    min-height: calc(100vh - 225px);
     display: block;
     margin: auto;
-    min-height: calc(100vh - 224px); 
     h2 {
-        padding: 40px 0px 30px 0px;
         font-family: $fonte-principal;
         font-size: $grande;
-        color: $cor-principal;
         line-height: $extra-grande;
+        padding-top: 40px;
+        padding-bottom: 30px;
+        color: $cor-principal;
     }
     .product-details {
         display: flex;
@@ -25,6 +26,7 @@
                 color: $cinza-medio;
                 font-size: $media;
                 line-height: $grande;
+                
             }
         }
     }

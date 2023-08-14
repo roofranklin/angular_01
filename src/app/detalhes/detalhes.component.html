@@ -1,11 +1,22 @@
 <div class="container">
-    <h2>Detalhes do Produto {{ titulo }}</h2>
+    <h2>{{ imovel.titulo }}</h2>
     <section class="product-details">
-        <img [src]="foto" alt="Foto de {{ titulo }}" />
+        <img [src]="imovel.foto" alt="Foto de {{ imovel.titulo }}" />
         <div class="product-description">
-            <p>{{ description }}</p>
-            <p>{{ description2 }}</p>
-        </div>
+            <p>{{ imovel.descricao }}</p>
+            <p>{{ imovel.descricao2 }}</p>
+            <p class="warning">Nota: A disponibilidade e o preço estão sujeitos a alterações. Entre em contato conosco para mais informações e agendamento de visitas.</p>
+            <h3>Características do Imóvel:</h3>
+            <ul>
+                <li>Quartos: {{imovel.quartos }}</li>
+                <li>Banheiros: {{ imovel.banheiros }}</li>
+                <li>Área construída: {{ imovel.area }}m²</li>
+                <li>Preço: {{ imovel.preco | currency }}</li>
+            </ul>  
+        </div>  
+    </section>
+    <section class="favoritos">
+        
     </section>
 </div>
 

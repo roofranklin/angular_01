@@ -1,0 +1,76 @@
+{
+  "imoveis": [
+    {
+      "id": 1,
+      "titulo": "Casa Magnífica",
+      "descricao": "Bem-vindo(a) ao seu futuro lar! Esta magnífica casa de 4 quartos, com duas suítes, é a oportunidade perfeita para você e sua família desfrutarem de uma vida confortável e elegante. Com seus generosos 4 quartos, esta casa oferece amplo espaço para acomodar toda a família. Além disso, duas suítes privativas garantem o máximo de conforto e privacidade para os moradores. A sala de estar espaçosa e aconchegante é perfeita para momentos de lazer em família ou para receber amigos. O ambiente proporciona um cenário ideal para desfrutar de noites agradáveis e descontraídas.",
+      "descricao2": "Essa casa representa uma oportunidade imperdível para conquistar um lar que combina conforto, elegância e praticidade em uma localização privilegiada. Não perca tempo e agende uma visita hoje mesmo!",
+      "foto": "https://i.ibb.co/JKzFtzj/casa.jpg",
+      "quartos": 4,
+      "banheiros": 3,
+      "area": 360,
+      "preco": 990000,
+      "favorito": true
+    },
+    {
+      "id": 2,
+      "titulo": "Apartamento Padrão",
+      "descricao": "Bem-vindo a este encantador apartamento de dois quartos, onde conforto e estilo se combinam para criar um ambiente acolhedor e agradável. Localizado em um edifício moderno de arquitetura elegante, este apartamento oferece uma experiência de vida contemporânea.",
+      "descricao2": "Este apartamento de dois quartos combina design moderno com funcionalidade, criando um ambiente que convida a um estilo de vida equilibrado e confortável. Sua localização conveniente, amenidades elegantes e layout bem pensado fazem deste espaço uma oportunidade única para criar um lar acolhedor e elegante.",
+      "foto": "https://i.ibb.co/tmsG61R/apartamento.jpg",
+      "quartos": 2,
+      "banheiros": 1,
+      "area": 45,
+      "preco": 120000,
+      "favorito": false
+    },
+    {
+      "id": 3,
+      "titulo": "Casa de Campo",
+      "descricao": "Bem-vindo a esta pitoresca casa de campo, um refúgio rústico e sereno longe do agito da vida urbana. Aninhada em meio a paisagens deslumbrantes e rodeada por uma aura de tranquilidade, esta casa de campo é um lugar onde a simplicidade e a natureza se unem para oferecer uma experiência única.",
+      "descricao2": "Esta casa de campo é muito mais do que apenas uma residência; é um refúgio encantador onde os ritmos da natureza se misturam com a serenidade do ambiente rural. Seja como um retiro de fim de semana ou um lar permanente, essa casa de campo oferece um espaço onde memórias preciosas são criadas e a conexão com a natureza é rejuvenescida.",
+      "foto": "https://i.ibb.co/5h1XHzY/casa-de-campo.jpg",
+      "quartos": 7,
+      "banheiros": 5,
+      "area": 800,
+      "preco": 1500000,
+      "favorito": false
+    },
+    {
+      "id": 4,
+      "titulo": "Flat Minimalista",
+      "descricao": "Bem-vindo a este elegante flat minimalista, onde o design limpo e a funcionalidade inteligente se unem para criar um espaço de viver despojado e sofisticado. Localizado em um prédio contemporâneo de linhas modernas, este flat oferece uma experiência de vida minimalista sem comprometer o conforto ou a estética.",
+      "descricao2": "Este flat minimalista é um exemplo de como menos pode ser mais, onde a simplicidade é celebrada e a funcionalidade é priorizada. Cada elemento foi escolhido com cuidado para criar um ambiente tranquilo e elegante, que reflete a beleza da simplicidade em todos os detalhes.",
+      "foto": "https://i.ibb.co/FqSpsYt/flat.jpg",
+      "quartos": 1,
+      "banheiros": 1,
+      "area": 36,
+      "preco": 180000,
+      "favorito": false
+    },
+    {
+      "id": "rg93h8eirbgrebngn",
+      "titulo": "Sala Comercial",
+      "descricao": "Bem-vindo a esta moderna e versátil sala comercial, um espaço projetado para atender às necessidades de negócios em busca de funcionalidade e estilo. Localizada em um edifício comercial de destaque, esta sala oferece uma oportunidade única para criar um ambiente profissional e convidativo.",
+      "descricao2": "A localização estratégica da sala comercial oferece fácil acesso a estacionamento, transporte público e outras amenidades comerciais. Com um design que prioriza a funcionalidade e uma estética profissional, esta sala comercial é uma oportunidade única para estabelecer uma presença comercial forte e atrair clientes com um espaço convidativo e bem planejado.",
+      "foto": "https://i.ibb.co/2nNsFkt/sala-comercial.jpg",
+      "quartos": 0,
+      "banheiros": 1,
+      "area": 25,
+      "preco": 250000,
+      "favorito": true
+    },
+    {
+      "id": "8493ty34hg489gh",
+      "titulo": "Cobertura Duplex",
+      "descricao": "Bem-vindo a esta impressionante cobertura duplex, uma residência de luxo que oferece uma combinação excepcional de espaço, design sofisticado e vistas deslumbrantes. Localizada no topo de um edifício de prestígio, esta cobertura oferece um estilo de vida exclusivo e refinado, combinando conforto com elegância contemporânea.",
+      "descricao2": "Esta cobertura duplex é muito mais do que uma residência - é uma declaração de estilo de vida refinado. Com seu design luxuoso, espaços generosos e vistas de tirar o fôlego, essa cobertura oferece um refúgio exclusivo para quem busca o ápice do conforto e da sofisticação.",
+      "foto": "https://i.ibb.co/pPHQfW2/cobertura.jpg",
+      "quartos": 3,
+      "banheiros": 3,
+      "area": 200,
+      "preco": 1500000,
+      "favorito": true
+    }
+  ]
+}

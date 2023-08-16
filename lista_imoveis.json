@@ -22,7 +22,7 @@
       "banheiros": 1,
       "area": 45,
       "preco": 120000,
-      "favorito": false
+      "favorito": true
     },
     {
       "id": 3,
@@ -34,7 +34,7 @@
       "banheiros": 5,
       "area": 800,
       "preco": 1500000,
-      "favorito": false
+      "favorito": true
     },
     {
       "id": 4,
@@ -58,7 +58,7 @@
       "banheiros": 1,
       "area": 25,
       "preco": 250000,
-      "favorito": true
+      "favorito": false
     },
     {
       "id": "8493ty34hg489gh",
@@ -70,7 +70,7 @@
       "banheiros": 3,
       "area": 200,
       "preco": 1500000,
-      "favorito": true
+      "favorito": false
     }
   ],
   "contato": {

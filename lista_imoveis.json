@@ -72,5 +72,11 @@
       "preco": 1500000,
       "favorito": true
     }
-  ]
+  ],
+  "contato": {
+    "nome": "aaaaaa",
+    "email": "bbb@teste.com",
+    "assunto": "suporte",
+    "mensagem": "blgm~çnb gnbgmnb´prmrt"
+  }
 }

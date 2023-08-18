@@ -20,6 +20,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { DetalhesComponent } from './detalhes/detalhes.component';
 import { RodapeComponent } from './rodape/rodape.component';
+import { SessionTimerComponent } from './session-timer/session-timer.component';
 
 registerLocaleData(ptBr);
 
@@ -29,7 +30,8 @@ registerLocaleData(ptBr);
     QuemSomosComponent,
     CabecalhoComponent,
     DetalhesComponent,
-    RodapeComponent
+    RodapeComponent,
+    SessionTimerComponent
   ],
   imports: [
     BrowserModule,

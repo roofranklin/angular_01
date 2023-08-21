@@ -1,39 +1,41 @@
 @import "../app.component.scss";
 
-.container {
-    width: 1140px;
-    min-height: calc(100vh - 370px);
-    display: block;
-    margin: auto;
-    h2 {
-        font-family: $fonte-principal;
-        font-size: $grande;
-        line-height: $extra-grande;
-        padding-top: 60px;
-        color: $cor-principal;
-    }
-    div {
-        mat-form-field {
-            display: block;
-            font-family: $fonte-secundaria;
-            font-size: $media;
+mat-tab-group {
+    min-height: calc(100vh - 224px);
+    .container {
+        width: 1140px;
+        display: block;
+        margin: auto;
+        h2 {
+            font-family: $fonte-principal;
+            font-size: $grande;
+            line-height: $extra-grande;
+            padding-top: 60px;
+            color: $cor-principal;
         }
-        button {
-            display: block;
-            background-color: $cor-principal;
-            color: $branco;
-            font-size: $media;
-            line-height: $grande;
-            border: none;
-            border-radius: 4px;
-            width: 100%;
-            height: 48px;
-            cursor: pointer;
-            &:hover {
-                background-color: #FF1234;
+        div {
+            mat-form-field {
+                display: block;
+                font-family: $fonte-secundaria;
+                font-size: $media;
             }
-            &:disabled {
-                cursor: not-allowed;
+            button {
+                display: block;
+                background-color: $cor-principal;
+                color: $branco;
+                font-size: $media;
+                line-height: $grande;
+                border: none;
+                border-radius: 4px;
+                width: 100%;
+                height: 48px;
+                cursor: pointer;
+                &:hover {
+                    background-color: #FF1234;
+                }
+                &:disabled {
+                    cursor: not-allowed;
+                }
             }
         }
     }

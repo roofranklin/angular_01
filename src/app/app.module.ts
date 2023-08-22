@@ -24,6 +24,8 @@ import { SessionTimerComponent } from './session-timer/session-timer.component';
 import { AuthService } from './auth.service';
 import { AdminComponent } from './admin/admin.component';
 
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -42,6 +44,7 @@ registerLocaleData(ptBr);
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    MatSnackBarModule,
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,

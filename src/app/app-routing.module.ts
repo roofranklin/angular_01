@@ -10,7 +10,7 @@ import { DetalhesComponent } from './detalhes/detalhes.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent},
+  { path: 'admin', component: AdminComponent },
   { path: 'home', component: HomeComponent },
   { path: 'quem-somos', component: QuemSomosComponent },
   { path: 'contato', component: ContatoComponent },

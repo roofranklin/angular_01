@@ -6,57 +6,53 @@ import { Observable, timer, Subscription } from 'rxjs';
   templateUrl: './session-timer.component.html',
   styleUrls: ['./session-timer.component.scss']
 })
-export class SessionTimerComponent {
-
+export class SessionTimerComponent implements OnInit, OnDestroy {
   timerObservable: Observable<number>;
   timerSubscription: Subscription;
   timePassed: number = 0; // Tempo em segundos
-
   alertWarning: boolean = false;
   alertDanger: boolean = false;
   alertMessage: string;
 
-  constructor () {}
+  constructor() { }
 
   ngOnInit(): void {
-    // Cria um Observable que exibe um valor a cada segundo
-    this.timerObservable = timer(0, 1000);
+    // Cria um Observable que emite um valor após um determinado período de tempo
+    this.timerObservable = timer(0, 1000); // Emitir a cada segundo
 
-    // Se inscreve no observable e realiza ações conforme passa o tempo
-    this.timerSubscription = this.timerObservable.subscribe (() => {
+    // Inscreve-se no Observable e realiza ações com base no tempo
+    this.timerSubscription = this.timerObservable.subscribe(() => {
       this.timePassed++;
 
       if (this.timePassed === 60) {
         this.handleLogout();
-      }      
-      else if (this.timePassed === 45) {
-        this.showDanger('Você será deslogado em 15 segundos!')
-      } else if (this.timePassed === 30 ) {
-        this.showWarning('Sua sessão está prestes a expirar...');
+      } else if (this.timePassed === 45) {
+        this.showDanger("Você será deslogado em 15 segundos!");
+      } else if (this.timePassed === 30) {
+        this.showWarning('Sua sessão está prestes a expirar!');
       }
-    })
+    });
   }
 
   ngOnDestroy(): void {
+    // Cancela a inscrição no Observable ao destruir o componente
     this.timerSubscription.unsubscribe();
   }
 
-  showWarning(mensagem: string): void {
+  showWarning(message: string): void {
     this.alertWarning = true;
-    this.alertMessage = mensagem;
+    this.alertMessage = message;  
   }
 
-  showDanger(mensagem: string): void {
+  showDanger(message: string): void {
     this.alertWarning = false;
     this.alertDanger = true;
-    this.alertMessage = mensagem;
+    this.alertMessage = message;  
   }
 
-  handleLogout (): void {
-    alert('Sessão expirada, realizando logout...');
+  handleLogout(): void {
+    alert('Sessão expirada. Realizando logout...');
+    // Chame sua função de logout aqui
   }
-
-
-
-
 }
+

@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgFor, NgIf } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatCardModule} from '@angular/material/card';
-import {MatIconModule} from '@angular/material/icon';
+import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
+import { NgFor, NgIf } from '@angular/common';
+
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 import {
   MatSnackBar,
   MatSnackBarHorizontalPosition,
@@ -20,17 +20,16 @@ import {
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
   standalone: true,
-  imports: [MatGridListModule, MatCardModule, MatIconModule, NgFor, NgIf, CommonModule,  MatSnackBarModule ],
+  imports: [ MatGridListModule, MatCardModule, MatIconModule, NgFor, NgIf, CommonModule,  MatSnackBarModule ],
 })
 export class HomeComponent implements OnInit {
 
-  nome: string = 'Pedro';
-  sobrenome: string = 'dos Santos';
-  imoveis: any;
+  nome: string =  'Roosevelt';
   imovel: any;
+  imoveis: any; 
 
-  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
-  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
 
   constructor(
     private router: Router,
@@ -44,20 +43,20 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  verDetalhes(imovelId: string) {
+  verDetalhes(imovelId: string): void {   
     this.router.navigate(['/detalhes', imovelId]);
   }
 
-  toogleFavorito(imovelId: string): void {
-
+  toggleFavorito(imovelId: string): void {
     this.http.get<any>('http://localhost:3000/imoveis/' + imovelId).subscribe(data => {
 
-      this.imovel = data;  
-      this.imovel.favorito = !this.imovel.favorito;
+      this.imovel = data;
 
+      this.imovel.favorito = !this.imovel.favorito;
       this.http.patch('http://localhost:3000/imoveis/' + imovelId, { favorito: this.imovel.favorito })
         .subscribe(
           response => {
+            // console.log('Property favorito status updated successfully:', response);
             if (this.imovel.favorito === true) {
               this._snackBar.open('O imóvel foi favoritado!', 'Fechar', {
                 horizontalPosition: this.horizontalPosition,
@@ -71,16 +70,25 @@ export class HomeComponent implements OnInit {
                 duration: 5000
               });
             }
+
             this.http.get<any>('http://localhost:3000/imoveis').subscribe(data => {
               this.imoveis = data;
             });
           },
           error => {
-              console.log('Ocorreu um erro', error);
+            // console.error('Error updating property favorito status:', error);
+              this._snackBar.open('Ocorreu um erro ao favoritar/desfavoritar o imóvel!', 'Fechar', {
+                horizontalPosition: this.horizontalPosition,
+                verticalPosition: this.verticalPosition,
+                duration: 5000
+              });
+              // Revert the 'favorito' value if the update fails
               this.imovel.favorito = !this.imovel.favorito;
-          } 
+            } 
             
-        );
-      });
-    }
+      );
+    });
+ 
+  }
+
 }

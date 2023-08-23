@@ -1,16 +1,16 @@
 @import "../app.component.scss";
 
 footer {
+    margin-top: 80px;
     width: 100%;
     height: 80px;
-    margin-top: 80px;
     background-color: $cor-secundaria;
     color: $branco;
     .container {
         width: 1140px;
         display: flex;
         margin: auto;
-        .copyright {
+        .copyright {    
             width: 75%;
             font-size: $media;
             font-family: $fonte-secundaria;
@@ -21,9 +21,9 @@ footer {
         .social-links {
             width: 25%;
             ul {
-                display: flex;
                 padding: 0;
                 margin: 0;
+                display: flex;
                 flex-direction: row-reverse;
                 li {
                     list-style-type: none;
@@ -34,7 +34,6 @@ footer {
                     }
                 }
             }
-
         }
     }
 }

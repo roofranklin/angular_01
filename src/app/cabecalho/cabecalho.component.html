@@ -1,17 +1,17 @@
 <mat-toolbar>
     <div class="container">
-        <h1>Lar Feliz Imóveis</h1>
+        <h1>Lar Feliz Imobiliária</h1>
         <span class="menu-spacer"></span>
         <button mat-button routerLink="/">Home</button>
         <button mat-button routerLink="quem-somos">Quem Somos</button>
         <button mat-button routerLink="contato">Contato</button>
-        <button class="auth" mat-button *ngIf="!loggedIn" routerLink="login">
+        <button class="auth" *ngIf="!loggedIn" mat-button routerLink="login">
             <mat-icon aria-hidden="false" aria-label="Acessar o sistema" fontIcon="login"></mat-icon>
             Acessar o sistema
         </button>
-        <button class="auth" mat-button *ngIf="loggedIn" (click)="logout()">
+        <button class="auth" *ngIf="loggedIn" mat-button (click)="logout()">
             <mat-icon aria-hidden="false" aria-label="Sair do sistema" fontIcon="logout"></mat-icon>
             Sair do sistema
         </button>
-    </div>
+    </div>    
 </mat-toolbar>

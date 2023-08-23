@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="imovel !== undefined">
     <h2>{{ imovel.titulo }}</h2>
     <section class="product-details">
         <img [src]="imovel.foto" alt="Foto de {{ imovel.titulo }}" />
@@ -6,17 +6,13 @@
             <p>{{ imovel.descricao }}</p>
             <p>{{ imovel.descricao2 }}</p>
             <p class="warning">Nota: A disponibilidade e o preço estão sujeitos a alterações. Entre em contato conosco para mais informações e agendamento de visitas.</p>
-            <h3>Características do Imóvel:</h3>
+            <h3>Características do imóvel:</h3>
             <ul>
-                <li>Quartos: {{imovel.quartos }}</li>
+                <li>Quartos: {{ imovel.quartos }}</li>
                 <li>Banheiros: {{ imovel.banheiros }}</li>
                 <li>Área construída: {{ imovel.area }}m²</li>
                 <li>Preço: {{ imovel.preco | currency }}</li>
-            </ul>  
-        </div>  
-    </section>
-    <section class="favoritos">
-        
+            </ul>
+        </div>
     </section>
 </div>
-

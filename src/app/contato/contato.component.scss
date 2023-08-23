@@ -11,7 +11,7 @@
         line-height: $extra-grande;
         padding-top: 20px;
         color: $cor-principal;
-    } 
+    }
     form {
         mat-form-field {
             display: block;
@@ -29,9 +29,6 @@
             width: 100%;
             height: 48px;
             cursor: pointer;
-            &:hover {
-                background-color: #FF1234;
-            }
             &:disabled {
                 cursor: not-allowed;
             }

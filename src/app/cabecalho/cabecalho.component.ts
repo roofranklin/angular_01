@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';  
+import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,13 +8,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./cabecalho.component.scss']
 })
 export class CabecalhoComponent {
-
   loggedIn = false;
 
   constructor(
     private router: Router,
-    private authService: AuthService
-    ) {
+    private authService: AuthService) {
     authService.loggedIn$.subscribe((loggedIn: boolean) => {
       this.loggedIn = loggedIn;
     });
@@ -22,7 +20,7 @@ export class CabecalhoComponent {
 
   logout(): void {
     this.authService.logout();
-    this.router.navigate(['/home'])
+    this.router.navigate(['/home']);
   }
-
+  
 }

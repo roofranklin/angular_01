@@ -5,9 +5,9 @@
         </div>
         <div class="social-links">
             <ul>
-                <li *ngFor="let redeSocial of redesSociais">
-                    <a [href]="redeSocial.link" target="_blank">
-                        <img src="{{ redeSocial.icone }}" alt="{{ redeSocial.nome }}" />
+                <li *ngFor="let item of redesSociais">
+                    <a [href]="item.link" target="_blank">
+                        <img src="{{ item.icone }}" alt="{{ item.nome }}" />
                     </a>
                 </li>
             </ul>

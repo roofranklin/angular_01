@@ -16,15 +16,13 @@ import { CabecalhoComponent } from './cabecalho/cabecalho.component';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatIconModule} from '@angular/material/icon';
 import { DetalhesComponent } from './detalhes/detalhes.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { SessionTimerComponent } from './session-timer/session-timer.component';
 import { AuthService } from './auth.service';
 import { AdminComponent } from './admin/admin.component';
-
-import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 registerLocaleData(ptBr);
 
@@ -44,12 +42,11 @@ registerLocaleData(ptBr);
     FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatSnackBarModule,
     HttpClientModule,
     MatToolbarModule,
-    MatIconModule,
     MatTabsModule,
     MatButtonModule,
+    MatIconModule,
     NgFor
   ],
   providers: [

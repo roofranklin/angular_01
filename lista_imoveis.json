@@ -79,5 +79,13 @@
     "assunto": "suporte",
     "mensagem": "blgm~çnb gnbgmnbprmrt"
   },
-  "usuarios": []
+  "usuarios": [
+    {
+      "name": "Usuário teste",
+      "username": "teste123",
+      "password": "111",
+      "confirmPassword": "111",
+      "id": 1
+    }
+  ]
 }

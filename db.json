@@ -79,13 +79,5 @@
     "assunto": "suporte",
     "mensagem": "blgm~çnb gnbgmnbprmrt"
   },
-  "usuarios": [
-    {
-      "name": "aaa",
-      "username": "aaa",
-      "password": "aaa",
-      "confirmPassword": "aaa",
-      "id": 1
-    }
-  ]
+  "usuarios": []
 }

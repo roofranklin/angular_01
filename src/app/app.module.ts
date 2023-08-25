@@ -22,7 +22,6 @@ import { DetalhesComponent } from './detalhes/detalhes.component';
 import { RodapeComponent } from './rodape/rodape.component';
 import { SessionTimerComponent } from './session-timer/session-timer.component';
 import { AuthService } from './auth.service';
-import { AdminComponent } from './admin/admin.component';
 
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
@@ -35,8 +34,7 @@ registerLocaleData(ptBr);
     CabecalhoComponent,
     DetalhesComponent,
     RodapeComponent,
-    SessionTimerComponent,
-    AdminComponent
+    SessionTimerComponent
   ],
   imports: [
     BrowserModule,

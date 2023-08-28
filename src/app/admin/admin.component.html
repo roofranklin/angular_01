@@ -1,8 +1,12 @@
 <div class="container">
-    <mat-form-field>
-        <mat-label>Pesquisar</mat-label>
-        <input matInput (keyup)="filtrarImovel($event)" placeholder="Ex. Casa de campo" #input>
-    </mat-form-field>
+    <div class="header">
+        <mat-form-field>
+            <mat-label>Pesquisar</mat-label>
+            <input matInput (keyup)="filtrarImovel($event)" placeholder="Ex. Casa de campo" #input>
+        </mat-form-field>
+        <button mat-button (click)="modalAdicionar('500ms', '500ms')">Cadastrar novo imóvel</button>
+    </div>
+    
     
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     
@@ -37,7 +41,7 @@
                 (click)="toggleFavorito(imovel.id)">
                 <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="favorite"></mat-icon>
             </button>
-            <button mat-button class="save" (click)="editarImovel(imovel.id)">
+            <button mat-button class="save" >
                 <mat-icon aria-hidden="false" aria-label="Editar" fontIcon="edit"></mat-icon>
             </button>
             <button mat-button class="delete" (click)="deletarImovel(imovel.id)">

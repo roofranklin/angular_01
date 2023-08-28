@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
+import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { HttpClient } from '@angular/common/http';
+
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import {
   MatSnackBar,
@@ -17,7 +21,7 @@ import {
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss'],
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatIconModule, MatSnackBarModule],
+  imports: [MatFormFieldModule, MatInputModule, MatTableModule, MatIconModule, MatSnackBarModule, MatDialogModule],
 })
 
 export class AdminComponent implements OnInit {
@@ -30,6 +34,7 @@ export class AdminComponent implements OnInit {
   dataSource = new MatTableDataSource();
 
   constructor ( 
+    public dialog: MatDialog,
     private _snackBar: MatSnackBar, 
     private http: HttpClient 
   ) {}
@@ -44,12 +49,12 @@ export class AdminComponent implements OnInit {
     });
   }
 
-  adicionarImovel(): void {
-
-  }
-
-  editarImovel(imovelId: string): void {
-    
+  modalAdicionar(enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(AdicionarImovel, {
+      width: '1000px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
   }
 
   deletarImovel(imovelId: string): void {
@@ -117,5 +122,68 @@ export class AdminComponent implements OnInit {
   filtrarImovel(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+}
+
+@Component({
+  selector: 'adicionar-imovel',
+  templateUrl: './adicionar-imovel.html',
+  styleUrls: ['./modal.scss'],
+  standalone: true,
+  imports: [MatDialogModule, MatFormFieldModule, MatInputModule, CommonModule, FormsModule],
+})
+
+export class AdicionarImovel {
+
+  titulo: string;
+  descricao: string;
+  descricao2: string;
+  foto: string;
+  quartos: number;
+  banheiros: number;
+  area: number;
+  preco: number;
+  favorito: boolean = false;
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
+
+  constructor(
+    private http: HttpClient,
+    private _snackBar: MatSnackBar,
+    public dialogRef: MatDialogRef<AdicionarImovel>
+  ) {}
+
+  adicionarImovel() {
+    const novoImovel = {
+      titulo: this.titulo,
+      descricao: this.descricao,
+      descricao2: this.descricao2,
+      foto: this.foto,
+      quartos: this.quartos,
+      banheiros: this.banheiros,
+      area: this.area,
+      preco: this.preco,
+      favorito: false,
+    };
+
+    this.http.post(' http://localhost:3000/imoveis', novoImovel)
+      .subscribe(
+        (response) => {
+          this._snackBar.open('Imóvel cadastrado com sucesso!', 'Fechar', {
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+            duration: 5000
+          });
+        },
+        (error) => {
+          console.error('Erro ao cadastrar imóvel:', error);
+          this._snackBar.open('Erro ao cadastrar imóvel!', 'Fechar', {
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+            duration: 5000
+          });
+        }
+    );
   }
 }

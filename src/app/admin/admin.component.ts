@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import {MatIconModule} from '@angular/material/icon';
@@ -54,6 +55,15 @@ export class AdminComponent implements OnInit {
       width: '1000px',
       enterAnimationDuration,
       exitAnimationDuration,
+    });
+  }
+
+  modalEditar(imovelId: string,  enterAnimationDuration: string, exitAnimationDuration: string): void {
+    this.dialog.open(EditarImovel, {
+      width: '1000px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+      data: imovelId
     });
   }
 
@@ -186,4 +196,66 @@ export class AdicionarImovel {
         }
     );
   }
+}
+
+@Component({
+  selector: 'editar-imovel',
+  templateUrl: './editar-imovel.html',
+  styleUrls: ['./modal.scss'],
+  standalone: true,
+  imports: [MatDialogModule, MatFormFieldModule, MatInputModule, CommonModule, FormsModule],
+})
+
+export class EditarImovel implements OnInit {
+
+  imovel: any = {};
+
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+
+  constructor(
+    private http: HttpClient,
+    private _snackBar: MatSnackBar,
+    public dialogRef: MatDialogRef<AdicionarImovel>,
+    @Inject(MAT_DIALOG_DATA) public data: any,
+  ) {} 
+
+    ngOnInit(): void {
+      this.http.get<any>('http://localhost:3000/imoveis/' + this.data).subscribe(response => {
+        this.imovel = response;
+      });
+    }
+
+    editarImovel() {
+      const dadosImovel = {
+        titulo: this.imovel.titulo,
+        descricao: this.imovel.descricao,
+        descricao2: this.imovel.descricao2,
+        foto: this.imovel.foto,
+        quartos: this.imovel.quartos,
+        banheiros: this.imovel.banheiros,
+        area: this.imovel.area,
+        preco: this.imovel.preco,
+        favorito: this.imovel.favorito,
+      }
+
+      this.http.patch('http://localhost:3000/imoveis/' + this.data, dadosImovel )
+      .subscribe(
+        (response) => {
+          this._snackBar.open('Imóvel alterado com sucesso!', 'Fechar', {
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+            duration: 5000
+          });
+        },
+        (error) => {
+          console.error('Erro ao alterar imóvel:', error);
+          this._snackBar.open('Erro ao cadastrar imóvel!', 'Fechar', {
+            horizontalPosition: this.horizontalPosition,
+            verticalPosition: this.verticalPosition,
+            duration: 5000
+          });
+        }
+      );
+    }
 }

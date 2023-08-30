@@ -37,3 +37,35 @@ footer {
         }
     }
 }
+@media (max-width: 480px) {
+    footer {
+        height: 80px;
+        .container {
+            width: 100%;
+            .copyright {
+                width: 70%;
+                p {
+                    padding: 15px 5px 5px 10px;
+                    line-height: 150%;
+                    font-size: 12px;
+                }
+            }
+            .social-links {
+                width: 30%;
+                margin: 0;
+                ul {
+                    display: flex;
+                    margin: 0;
+                    flex-direction: row-reverse;
+                    padding: 0px;
+                    li {
+                        list-style-type: none;
+                        img {
+                            width: 24px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

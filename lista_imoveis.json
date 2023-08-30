@@ -10,12 +10,12 @@
       "banheiros": 3,
       "area": 360,
       "preco": 990000,
-      "favorito": false
+      "favorito": true
     },
     {
       "id": 2,
-      "titulo": "Apartamento Padrão (Editado em aula)",
-      "descricao": "aaaaaa Bem-vindo a este encantador apartamento de dois quartos, onde conforto e estilo se combinam para criar um ambiente acolhedor e agradável. Localizado em um edifício moderno de arquitetura elegante, este apartamento oferece uma experiência de vida contemporânea.",
+      "titulo": "Apartamento Padrão",
+      "descricao": "Bem-vindo a este encantador apartamento de dois quartos, onde conforto e estilo se combinam para criar um ambiente acolhedor e agradável. Localizado em um edifício moderno de arquitetura elegante, este apartamento oferece uma experiência de vida contemporânea.",
       "descricao2": "Este apartamento de dois quartos combina design moderno com funcionalidade, criando um ambiente que convida a um estilo de vida equilibrado e confortável. Sua localização conveniente, amenidades elegantes e layout bem pensado fazem deste espaço uma oportunidade única para criar um lar acolhedor e elegante.",
       "foto": "https://www.clevergirlfinance.com/wp-content/uploads/2021/05/Buying-a-house-to-rent-out.jpg",
       "quartos": "1",

@@ -28,6 +28,8 @@ export class HomeComponent implements OnInit {
   imovel: any;
   imoveis: any; 
 
+  breakpoint: number = (window.innerWidth <= 480) ? 1 : 3;
+
   horizontalPosition: MatSnackBarHorizontalPosition = 'end';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
@@ -39,6 +41,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.listarImoveis();
+  }
+
+  onResize(event: any): void {
+    this.breakpoint = (event.target.innerWidth <= 480) ? 1 : 3;
   }
 
   listarImoveis(): void {

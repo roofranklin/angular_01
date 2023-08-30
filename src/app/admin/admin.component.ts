@@ -216,7 +216,7 @@ export class EditarImovel implements OnInit {
   constructor(
     private http: HttpClient,
     private _snackBar: MatSnackBar,
-    public dialogRef: MatDialogRef<AdicionarImovel>,
+    public dialogRef: MatDialogRef<EditarImovel>,
     @Inject(MAT_DIALOG_DATA) public data: any,
   ) {} 
 

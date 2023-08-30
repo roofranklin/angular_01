@@ -73,7 +73,6 @@ export class ContatoComponent {
     this.http.post(' http://localhost:3000/contato', formData, body)
       .subscribe(
         response => {
-          // console.log('Formulário enviado com sucesso!');
           this._snackBar.open('Formulário enviado com sucesso!', 'Fechar', {
             horizontalPosition: this.horizontalPosition,
             verticalPosition: this.verticalPosition,
@@ -81,7 +80,6 @@ export class ContatoComponent {
           });
         },
         error => {
-          // console.error('Erro ao enviar o formulário:', error);
           if (error.status === 404 ) {
             this._snackBar.open('O endereço de destino está incorreto!', 'Fechar', {
               horizontalPosition: this.horizontalPosition,

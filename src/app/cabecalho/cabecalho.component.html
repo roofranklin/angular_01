@@ -1,17 +1,36 @@
 <mat-toolbar>
-    <div class="container">
-        <h1>Lar Feliz Imobiliária</h1>
-        <span class="menu-spacer"></span>
-        <button mat-button routerLink="/">Home</button>
-        <button mat-button routerLink="quem-somos">Quem Somos</button>
-        <button mat-button routerLink="contato">Contato</button>
-        <button class="auth" *ngIf="!loggedIn" mat-button routerLink="login">
-            <mat-icon aria-hidden="false" aria-label="Acessar o sistema" fontIcon="login"></mat-icon>
-            Acessar o sistema
-        </button>
-        <button class="auth" *ngIf="loggedIn" mat-button (click)="logout()">
-            <mat-icon aria-hidden="false" aria-label="Sair do sistema" fontIcon="logout"></mat-icon>
-            Sair do sistema
-        </button>
-    </div>    
+    <nav class="container">
+        <input type="checkbox" id="nav-check" />
+        <div class="nav-header">
+            <div class="nav-title">
+                Lar Feliz Imóveis
+            </div>
+        </div>
+        
+        <div class="nav-btn">
+            <label for="nav-check">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+
+        <ul class="nav-list">
+            <li><button mat-button routerLink="/">Home</button></li>
+            <li><button mat-button routerLink="quem-somos">Quem Somos</button></li>
+            <li><button mat-button routerLink="contato">Contato</button></li>
+            <li>
+                <button class="auth" *ngIf="!loggedIn" mat-button routerLink="login">
+                    <mat-icon aria-hidden="false" aria-label="Acessar o sistema" fontIcon="login"></mat-icon>
+                    Acessar o sistema
+                </button>
+            </li>
+            <li>
+                <button class="auth" *ngIf="loggedIn" mat-button (click)="logout()">
+                    <mat-icon aria-hidden="false" aria-label="Sair do sistema" fontIcon="logout"></mat-icon>
+                    Sair do sistema
+                </button>
+            </li>
+        </ul> 
+    </nav>    
 </mat-toolbar>

@@ -38,6 +38,10 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.listarImoveis();
+  }
+
+  listarImoveis(): void {
     this.http.get<any>('http://localhost:3000/imoveis').subscribe(data => {
       this.imoveis = data;
     });
@@ -56,7 +60,6 @@ export class HomeComponent implements OnInit {
       this.http.patch('http://localhost:3000/imoveis/' + imovelId, { favorito: this.imovel.favorito })
         .subscribe(
           response => {
-            // console.log('Property favorito status updated successfully:', response);
             if (this.imovel.favorito === true) {
               this._snackBar.open('O imóvel foi favoritado!', 'Fechar', {
                 horizontalPosition: this.horizontalPosition,
@@ -70,13 +73,9 @@ export class HomeComponent implements OnInit {
                 duration: 5000
               });
             }
-
-            this.http.get<any>('http://localhost:3000/imoveis').subscribe(data => {
-              this.imoveis = data;
-            });
+            this.listarImoveis();
           },
           error => {
-            // console.error('Error updating property favorito status:', error);
               this._snackBar.open('Ocorreu um erro ao favoritar/desfavoritar o imóvel!', 'Fechar', {
                 horizontalPosition: this.horizontalPosition,
                 verticalPosition: this.verticalPosition,
@@ -84,11 +83,8 @@ export class HomeComponent implements OnInit {
               });
               // Revert the 'favorito' value if the update fails
               this.imovel.favorito = !this.imovel.favorito;
-            } 
-            
-      );
-    });
- 
-  }
-
+            }            
+          );
+      });
+   }
 }

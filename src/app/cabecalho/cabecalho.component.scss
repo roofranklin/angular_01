@@ -3,35 +3,107 @@
 mat-toolbar {
     background-color: $cor-principal;
     color: $branco;
+    height: 76px;
     .container {
-      width: 1140px;
-      display: flex;
-      margin: auto;
-      h1{
-        font-family: $fonte-principal;
-        font-size: $grande;
-        color: $branco;
-        padding-top: 15px;
-      }
-      .menu-spacer {
-        flex: 1 1 auto;
-      }
-      button {
-        margin-top: 10px;
-        &:hover {
-          color: $cor-secundaria;
+        width: 1140px;
+        display: flex;
+        margin: auto;
+        background-color: $cor-principal;
+        align-items: center;
+        .nav-header {
+            .nav-title {
+              font-family: $fonte-principal;
+              font-size: $grande;
+              color: $branco;
+            }
         }
-      }
-      .auth {
-        background-color: $cor-secundaria;
-        color: $branco;
-        margin-left: 30px;
-        top: 4px;
-        padding: 10px 20px;
-        &:hover {
-          color: $branco;
-          opacity: 0.8;
-        }
-      }
+        .nav-list {
+            display: flex;
+            gap: 20px;
+            li {
+                list-style-type: none;
+                button {
+                    color: $branco;
+                    cursor: pointer;
+                    &:hover {
+                        color: $cor-secundaria;
+                    }
+                }
+                .auth {
+                    background-color: $cor-secundaria;
+                    color: $branco;
+                    margin-left: 30px;
+                    padding: 10px 20px;
+                    &:hover {
+                        color: $branco;
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }  
+        #nav-check {
+          display: none;
+        } 
     }
-  }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+        .nav-btn {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            padding-top: 0.2rem;
+            label {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                padding: 12px;
+                span {
+                  display: block;
+                  width: 25px;
+                  height: 10px;
+                  border-top: 2px solid $branco;
+                }
+            }
+        }
+        .nav-list {
+            position: absolute;
+            z-index: 100;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+            background-color: $cor-principal;
+            height: 0;
+            transition: all 0.3 ease-in;
+            top: 40px;
+            left: 0;
+            overflow: hidden;
+            li {
+                width: 100%;
+                margin-top: 1rem;
+                button {
+                  font-size: 2em;
+                  font-family: $fonte-principal;
+                }
+                .auth {
+                    background-color: $cor-secundaria;
+                    color: $branco;
+                    padding: 30px !important;
+                    margin-left: 0px !important;
+                    &:hover {
+                        color: $branco;
+                        opacity: 0.8;
+                    }
+                }
+            }
+        }
+        #nav-check:checked ~ .nav-list {
+          height: calc(100vh - 50px);
+        } 
+    }
+}
+
+
